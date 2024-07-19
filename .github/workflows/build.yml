@@ -15,12 +15,6 @@ jobs:
         with:
           submodules: true # Get JUCE populated
 
-      - name: Checkout tools repo
-        uses: actions/checkout@v4
-        with:
-          repository: juce-framework/juce
-          path: JUCE
-
       - name: Install Linux Deps
         run: |
           sudo apt-get update

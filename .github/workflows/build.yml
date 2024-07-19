@@ -12,6 +12,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          submodules: true # Get JUCE populated
 
       - name: Checkout tools repo
         uses: actions/checkout@v4
@@ -28,5 +30,4 @@ jobs:
 
       - name: Build Docs
         run: |
-          cd JUCE
           ./doxygen-1.11.0/bin/doxygen Doxyfile

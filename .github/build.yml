@@ -1,0 +1,29 @@
+name: Build JUCE docs
+
+on:
+  push:
+  workflow_dispatch:
+
+
+jobs:
+  build:
+    # fixed to avoid breaking changes
+    runs-on: ubuntu-24.04
+
+    - name: Checkout
+      uses: actions/checkout@v4
+
+    - name: Checkout tools repo
+      uses: actions/checkout@v4
+      with:
+        repository: juce-framework/juce
+        path: JUCE
+
+   - name: Install Linux Deps
+      run: |
+        sudo apt-get update
+        sudo apt-install graphviz perl build-base texlive-full biblatex ghostscript ttf-freefont
+        wget https://github.com/doxygen/doxygen/releases/download/Release_1_11_0/doxygen-1.11.0.linux.bin.tar.gz
+        tar xzvf doxygen-1.11.0.linux.bin.tar.gz
+
+

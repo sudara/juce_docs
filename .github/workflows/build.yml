@@ -10,16 +10,17 @@ jobs:
     # fixed to avoid breaking changes
     runs-on: ubuntu-24.04
 
+    steps:
     - name: Checkout
       uses: actions/checkout@v4
-
+    
     - name: Checkout tools repo
       uses: actions/checkout@v4
       with:
         repository: juce-framework/juce
         path: JUCE
-
-   - name: Install Linux Deps
+    
+    - name: Install Linux Deps
       run: |
         sudo apt-get update
         sudo apt-install graphviz perl build-base texlive-full biblatex ghostscript ttf-freefont

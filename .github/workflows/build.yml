@@ -25,3 +25,8 @@ jobs:
           sudo apt install graphviz
           wget https://github.com/doxygen/doxygen/releases/download/Release_1_11_0/doxygen-1.11.0.linux.bin.tar.gz
           tar xzvf doxygen-1.11.0.linux.bin.tar.gz
+
+      - name: Build Docs
+        run: |
+          cd JUCE
+          ./doxygen-1.11.0/bin/doxygen Doxyfile

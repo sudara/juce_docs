@@ -22,6 +22,6 @@ jobs:
       - name: Install Linux Deps
         run: |
           sudo apt-get update
-          sudo apt install graphviz perl build-base texlive-full biblatex ghostscript ttf-freefont
+          sudo apt install graphviz
           wget https://github.com/doxygen/doxygen/releases/download/Release_1_11_0/doxygen-1.11.0.linux.bin.tar.gz
           tar xzvf doxygen-1.11.0.linux.bin.tar.gz
